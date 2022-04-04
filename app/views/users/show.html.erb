@@ -12,6 +12,9 @@
     <%= image_tag post_image.get_image %>
   <% end %>
   <p>投稿ユーザー画像：<%= image_tag post_image.user.get_profile_image(100,100) %></p>
+  <% if @user == curr %>
+    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  <% end %>
   <p>ショップ名：<%= post_image.shop_name %></p>
   <p>説明：<%= post_image.caption %></p>
   <p>ユーザーネーム：<%= post_image.user.name %></p>
